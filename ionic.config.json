@@ -1,0 +1,7 @@
+{
+  "name": "NEXTHOME",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
