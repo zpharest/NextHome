@@ -4,7 +4,7 @@
 <ion-content [fullscreen]="true">
 
   <div class="flex-center">
-    <ion-card>
+    <ion-card >
       <ion-card-header>
         <ion-card-title color="secondary">NextHome</ion-card-title>
       </ion-card-header>
@@ -12,11 +12,17 @@
       <ion-card-content>
 
         <ion-item>
+          <ion-input label="Nome & Sobrenome" labelPlacement="floating" placeholder="Digite aqui: "></ion-input>
+        </ion-item>
+
+        <ion-item>
           <ion-input type="email" label="E-mail" labelPlacement="floating" placeholder="email@gmail.com"></ion-input>
         </ion-item>
+
         <ion-item>
           <ion-input type="password" label="Senha" labelPlacement="floating" placeholder="Senha"></ion-input>
         </ion-item>
+
         <ion-button size="full" color="dark" fill="clear">Esqueci minha senha</ion-button>
         <ion-button color="secondary" size="full">Login</ion-button>
         <ion-button color="secondary" size="full" fill="clear">Registrar</ion-button>
