@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <!--Botao menu-->
+    <ion-buttons slot="start">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>NextHome</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list color="secondary">
+      <ion-item color="secondary">
+          <ion-avatar slot="start">
+              <img src="">
+          </ion-avatar>
+          <ion-label>
+              <h1>Vinicius Pires</h1>
+              <p>Doações Realizadas: <span id="donations">00</span></p>
+          </ion-label>
+      </ion-item>
+  </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Ultimas Doações: </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-icon name="hourglass-outline" slot="start" color="warning"></ion-icon>
+        <ion-label>Geladeira <p>12/07/2024 17:36</p></ion-label>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label><p>Anunciado em 11/07/2024 </p><p>Nota: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p></ion-label>
+      </ion-item>
+      <ion-button color="secondary" fill="clear" size="full">Ver todos...</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button >
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

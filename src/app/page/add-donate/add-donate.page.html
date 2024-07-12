@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Criar Doação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-list [inset]="true">
+    <ion-item color="secondary" id="img-anuncio">
+      <ion-button fill="clear" color="secondary"><img src="assets/imagem/imgadd.png" height="70"></ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Anuncio: "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea label="Detalhes" labelPlacement="floating" rows="5"></ion-textarea>
+    </ion-item>
+</ion-list>
+
+
+    <ion-button id="publish-button" size="full" shape="round" >Publicar</ion-button>
+</ion-content>
