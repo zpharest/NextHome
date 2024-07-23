@@ -15,6 +15,9 @@ import { MinhasDoacoesPage } from './minhas-doacoes.page';
     IonicModule,
     MinhasDoacoesPageRoutingModule
   ],
-  declarations: [MinhasDoacoesPage]
+  declarations: [MinhasDoacoesPage,
+
+
+  ]
 })
 export class MinhasDoacoesPageModule {}
