@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'minhas-doacoes',
     loadChildren: () => import('./page/minhas-doacoes/minhas-doacoes.module').then( m => m.MinhasDoacoesPageModule)
+  },  {
+    path: 'settings',
+    loadChildren: () => import('./page/settings/settings.module').then( m => m.SettingsPageModule)
   }
+
 ];
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MenuController, NavController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -7,9 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterPage implements OnInit {
 
-  constructor() { }
+  constructor( 
+    private navCtrl: NavController,
+    public menuCtrl: MenuController
+  ) { }
 
   ngOnInit() {
   }
 
+  
+  showLoginPage(){
+    this.navCtrl.navigateForward('login')
+  }
+
+  ionViewDidEnter(){
+    this.menuCtrl.enable(false);
+  }
+
+  ionViewWillLeave(){
+    this.menuCtrl.enable(true);
+
+    
+}
 }

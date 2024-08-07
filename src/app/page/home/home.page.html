@@ -33,12 +33,11 @@
       <ion-item lines="none">
         <ion-label><p>Anunciado em 11/07/2024 </p><p>Nota: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p></ion-label>
       </ion-item>
-      <ion-button color="secondary" fill="clear" size="full">Ver todos...</ion-button>
+      <ion-button (click)="showDonatesPage()" color="secondary" fill="clear" size="full">Ver todos...</ion-button>
     </ion-card-content>
   </ion-card>
-
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button >
+    <ion-fab-button (click)="showAddPage()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
