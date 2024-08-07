@@ -8,9 +8,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">settings</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-button expand="block" (click)="takePicture()">Take Picture</ion-button>
+  <img [src]="picture">
 </ion-content>
