@@ -6,12 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.page.scss'],
 })
 export class SettingsPage{
-  picture!: string;
   constructor() {}
 
-  takePicture() {
-    console.log('I will take a picture');
-  }
 
   ngOnInit() {
   }
