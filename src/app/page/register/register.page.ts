@@ -19,6 +19,9 @@ export class RegisterPage implements OnInit {
   showLoginPage(){
     this.navCtrl.navigateForward('login')
   }
+  showHomePage(){
+    this.navCtrl.navigateForward('home')
+  }
 
   ionViewDidEnter(){
     this.menuCtrl.enable(false);
