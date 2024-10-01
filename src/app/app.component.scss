@@ -157,12 +157,12 @@ ion-header {
   }
 }
 
-  .menu-items{
+  #menu-items{
     margin: 0px;
 
     ion-icon{
       margin-right: 20px;
-      color: blue;
+      color: var(--ion-color-secondary)
     }
 
     ion-item{
