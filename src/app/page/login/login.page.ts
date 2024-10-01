@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
 import {Router} from '@angular/router';
+import { Store } from '@ngrx/store';
+import { hide, show } from 'src/store/loading/loading.actions';
+import { AppState } from 'src/store/AppState';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +17,8 @@ export class LoginPage implements OnInit {
   constructor(
     private navCtrl: NavController,
     public menuCtrl: MenuController,
-    private router: Router
+    private router: Router,
+    private store: Store<AppState>
   ) { 
 
 
@@ -33,6 +37,14 @@ export class LoginPage implements OnInit {
       // Aqui você pode adicionar um alerta ou mensagem de erro se necessário
       console.error("Email e senha são obrigatórios!");
     }
+  }
+
+  forgotEmailPassword(){
+    this.store.dispatch(show())
+
+    setTimeout(() =>{
+        this.store.dispatch(hide())
+    }, 3000)
   }
 
   showLogPage() {

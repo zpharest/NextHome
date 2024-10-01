@@ -1,9 +1,9 @@
-<ion-content [fullscreen]="true" color="primary">
+<ion-content [fullscreen]="true" color="secondary">
 
   <div class="flex-center">
     <ion-card>
       <ion-card-header>
-        <ion-card-title color="secondary">NextHome</ion-card-title>
+        <ion-card-title class="flex-center" color="secondary" >Registro </ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
@@ -50,8 +50,8 @@
               labelPlacement="floating"
               placeholder="Senha"
               required
-              [(ngModel)]="senha"
-              name="senha">
+              [(ngModel)]="password"
+              name="password">
             </ion-input>
           </ion-item>
 
@@ -60,8 +60,10 @@
             type="submit" 
             color="secondary" 
             size="full" 
+            shape="round"
+            (click)="register()"
             [disabled]="loginForm.invalid">Entrar</ion-button>
-          <ion-button (click)="showLoginPage()" color="secondary" size="full" fill="clear">Login</ion-button>
+          <ion-button (click)="login()" color="secondary" size="full" fill="clear">Login</ion-button>
         </form>
 
       </ion-card-content>

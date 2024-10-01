@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
@@ -10,17 +11,44 @@ export class RegisterPage implements OnInit {
   nome: string = '';
   sobrenome: string = '';  // Propriedade para armazenar o nome
   email: string = ''; // Propriedade para armazenar o e-mail
-  senha: string = ''; // Propriedade para armazenar a senha
+  password: string = ''; // Propriedade para armazenar a senha
 
   constructor( 
     private navCtrl: NavController,
-    public menuCtrl: MenuController
-  ) { }
+    public menuCtrl: MenuController,
+    private router: Router,
+  ) { 
+
+       // Inicializar as propriedades
+       this.email = '';    
+       this.password = ''; 
+
+  }
+
+      
 
   ngOnInit() {}
 
+   // Método chamado ao enviar o formulário
+   onSubmit() {
+    if (this.email && this.password) {
+      this.showHomePage(); // Navegar para a página inicial
+    } else {
+      // Aqui você pode adicionar um alerta ou mensagem de erro se necessário
+      console.error("Email e senha são obrigatórios!");
+    }
+  }
+
+
   showLoginPage() {
     this.navCtrl.navigateForward('login');
+  }
+
+  register(){
+    this.router.navigate(['home']);
+  }
+  login(){
+    this.router.navigate(['login']);
   }
 
   showHomePage() {
