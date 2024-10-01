@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { NavController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  constructor(  private navCtrl: NavController){
+  constructor(  private navCtrl: NavController, public menuCtrl: MenuController){
 
    }
 
@@ -23,6 +23,8 @@ export class HomePage implements OnInit {
     this.navCtrl.navigateForward('minhas-doacoes')
   }
 
-
+  ionViewDidEnter() {
+    this.menuCtrl.enable(true);
+  }
 
 }

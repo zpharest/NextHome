@@ -1,34 +1,60 @@
-
-
-
 <ion-content [fullscreen]="true" color="primary">
 
   <div class="flex-center">
-    <ion-card >
+    <ion-card>
       <ion-card-header>
         <ion-card-title color="secondary">NextHome</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
 
-        <ion-item>
-          <ion-input label="Nome & Sobrenome" labelPlacement="floating" placeholder="Digite aqui: "></ion-input>
-        </ion-item>
+        <form #loginForm="ngForm" (ngSubmit)="showHomePage()" novalidate>
+          <ion-item>
+            <ion-input
+              label="Nome & Sobrenome"
+              labelPlacement="floating"
+              placeholder="Digite aqui: "
+              required
+              [(ngModel)]="nome"
+              name="nome">
+            </ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-input type="email" label="E-mail" labelPlacement="floating" placeholder="email@gmail.com"></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input
+              type="email"
+              label="E-mail"
+              labelPlacement="floating"
+              placeholder="email@gmail.com"
+              required
+              [(ngModel)]="email"
+              name="email">
+            </ion-input>
+          </ion-item>
 
-        <ion-item>
-          <ion-input type="password" label="Senha" labelPlacement="floating" placeholder="Senha"></ion-input>
-        </ion-item>
+          <ion-item>
+            <ion-input
+              type="password"
+              label="Senha"
+              labelPlacement="floating"
+              placeholder="Senha"
+              required
+              [(ngModel)]="senha"
+              name="senha">
+            </ion-input>
+          </ion-item>
 
-        <ion-button size="full" color="dark" fill="clear">Esqueci minha senha</ion-button>
-        <ion-button (click)="showHomePage()" color="secondary" size="full">Entrar</ion-button>
-        <ion-button (click)="showLoginPage()" color="secondary" size="full" fill="clear">Login</ion-button>
+          <ion-button size="full" color="dark" fill="clear">Esqueci minha senha</ion-button>
+          <ion-button 
+            type="submit" 
+            color="secondary" 
+            size="full" 
+            [disabled]="loginForm.invalid">Entrar</ion-button>
+          <ion-button (click)="showLoginPage()" color="secondary" size="full" fill="clear">Login</ion-button>
+        </form>
 
       </ion-card-content>
     </ion-card>
-</div>
+  </div>
 
 </ion-content>
