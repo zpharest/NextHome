@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
 
 @Component({
@@ -13,13 +14,21 @@ export class RegisterPage implements OnInit {
 
   constructor( 
     private navCtrl: NavController,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    private router: Router
   ) { }
 
   ngOnInit() {}
 
   showLoginPage() {
     this.navCtrl.navigateForward('login');
+  }
+
+  register(){
+    this.router.navigate(['home']);
+  }
+  login(){
+    this.router.navigate(['login']);
   }
 
   showHomePage() {

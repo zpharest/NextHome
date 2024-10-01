@@ -49,8 +49,9 @@
             type="submit" 
             color="secondary" 
             size="full" 
+            (click)="register()"
             [disabled]="loginForm.invalid">Entrar</ion-button>
-          <ion-button (click)="showLoginPage()" color="secondary" size="full" fill="clear">Login</ion-button>
+          <ion-button (click)="login()" color="secondary" size="full" fill="clear">Login</ion-button>
         </form>
 
       </ion-card-content>
