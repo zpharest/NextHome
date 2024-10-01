@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,11 @@ export class LoginPage implements OnInit {
 
   constructor(
     private navCtrl: NavController,
-    public menuCtrl: MenuController
+    public menuCtrl: MenuController,
+    private router: Router
   ) { 
+
+
     // Inicializar as propriedades
     this.email = '';    
     this.password = ''; 
@@ -41,5 +45,12 @@ export class LoginPage implements OnInit {
 
   ionViewDidEnter() {
     this.menuCtrl.enable(false);
+  }
+
+  login(){
+    this.router.navigate(['home']);
+  }
+  register(){
+    this.router.navigate(['register']);
   }
 }
