@@ -7,7 +7,8 @@ import { MenuController, NavController } from '@ionic/angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-  nome: string = ''; // Propriedade para armazenar o nome
+  nome: string = '';
+  sobrenome: string = '';  // Propriedade para armazenar o nome
   email: string = ''; // Propriedade para armazenar o e-mail
   senha: string = ''; // Propriedade para armazenar a senha
 

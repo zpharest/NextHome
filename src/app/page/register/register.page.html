@@ -11,12 +11,23 @@
         <form #loginForm="ngForm" (ngSubmit)="showHomePage()" novalidate>
           <ion-item>
             <ion-input
-              label="Nome & Sobrenome"
+              label="Nome"
               labelPlacement="floating"
               placeholder="Digite aqui: "
               required
               [(ngModel)]="nome"
               name="nome">
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-input
+              label="Sobrenome"
+              labelPlacement="floating"
+              placeholder="Digite aqui: "
+              required
+              [(ngModel)]="sobrenome"
+              name="sobrenome">
             </ion-input>
           </ion-item>
 
