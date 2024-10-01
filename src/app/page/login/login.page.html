@@ -1,11 +1,14 @@
-<ion-content [fullscreen]="true" color="primary">
+<ion-content [fullscreen]="true" color="secondary">
   <div class="flex-center">
+    
+
     <ion-card>
       <ion-card-header>
-        <ion-card-title color="secondary">NextHome</ion-card-title>
+        <ion-card-title class="flex-center" color="secondary">Login</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
+        
         <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
           <ion-item>
             <ion-input
@@ -29,10 +32,13 @@
               name="password">
             </ion-input>
           </ion-item>
-          <ion-button size="full" color="dark" fill="clear">Esqueci minha senha</ion-button>
+          <ion-button size="full" color="dark" fill="clear" [disabled]="!loginForm.form.valid"
+            (click)="forgotEmailPassword()"
+          >Esqueci minha senha</ion-button>
           <ion-button 
             type="submit" 
             color="secondary" 
+            shape="round"
             size="full" 
             (click)="login()"
             [disabled]="!loginForm.form.valid">

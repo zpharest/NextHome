@@ -10,7 +10,7 @@ import {Camera, CameraResultType, CameraSource} from '@capacitor/camera';
 })
 export class AddDonatePage {
   
-  imageSource:any;
+  imageSource:any = 'assets/imagem/imgadd.png';
   constructor( private navCtrl: NavController) { }
 
   ngOnInit() {
