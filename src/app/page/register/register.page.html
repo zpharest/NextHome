@@ -8,14 +8,14 @@
 
       <ion-card-content>
 
-        <form #loginForm="ngForm" (ngSubmit)="showHomePage()" novalidate>
+        <form #loginForm="ngForm" (ngSubmit)="showLoginPage()" novalidate>
           <ion-item>
             <ion-input
               label="Nome"
               labelPlacement="floating"
               placeholder="Digite aqui: "
               required
-              [(ngModel)]="nome"
+              [(ngModel)]="formData.nome"
               name="nome">
             </ion-input>
           </ion-item>
@@ -26,7 +26,7 @@
               labelPlacement="floating"
               placeholder="Digite aqui: "
               required
-              [(ngModel)]="sobrenome"
+              [(ngModel)]="formData.sobrenome"
               name="sobrenome">
             </ion-input>
           </ion-item>
@@ -38,7 +38,7 @@
               labelPlacement="floating"
               placeholder="email@gmail.com"
               required
-              [(ngModel)]="email"
+              [(ngModel)]="formData.email"
               name="email">
             </ion-input>
           </ion-item>
@@ -50,8 +50,8 @@
               labelPlacement="floating"
               placeholder="Senha"
               required
-              [(ngModel)]="password"
-              name="password">
+              [(ngModel)]="formData.senha"
+              name="senha">
             </ion-input>
           </ion-item>
 
@@ -61,8 +61,8 @@
             color="secondary" 
             size="full" 
             shape="round"
-            (click)="register()"
-            [disabled]="loginForm.invalid">Entrar</ion-button>
+            (click)="create()"
+            [disabled]="loginForm.invalid">Registar-se</ion-button>
           <ion-button (click)="login()" color="secondary" size="full" fill="clear">Login</ion-button>
         </form>
 

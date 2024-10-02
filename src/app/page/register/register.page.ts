@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
+import axios from 'axios';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,15 @@ export class RegisterPage implements OnInit {
   nome: string = '';
   sobrenome: string = '';  // Propriedade para armazenar o nome
   email: string = ''; // Propriedade para armazenar o e-mail
-  password: string = ''; // Propriedade para armazenar a senha
+  senha: string = ''; // Propriedade para armazenar a senha
+
+  formData = {
+    nome:"",
+    sobrenome: "",
+    email: "",
+    senha: "", 
+  }
+
 
   constructor( 
     private navCtrl: NavController,
@@ -21,7 +30,7 @@ export class RegisterPage implements OnInit {
 
        // Inicializar as propriedades
        this.email = '';    
-       this.password = ''; 
+       this.senha = ''; 
 
   }
 
@@ -31,7 +40,7 @@ export class RegisterPage implements OnInit {
 
    // Método chamado ao enviar o formulário
    onSubmit() {
-    if (this.email && this.password) {
+    if (this.email && this.senha) {
       this.showHomePage(); // Navegar para a página inicial
     } else {
       // Aqui você pode adicionar um alerta ou mensagem de erro se necessário
@@ -44,9 +53,7 @@ export class RegisterPage implements OnInit {
     this.navCtrl.navigateForward('login');
   }
 
-  register(){
-    this.router.navigate(['home']);
-  }
+  
   login(){
     this.router.navigate(['login']);
   }
@@ -62,4 +69,17 @@ export class RegisterPage implements OnInit {
   ionViewWillLeave() {
     this.menuCtrl.enable(true);
   }
+
+  create(){
+    console.log(this.formData);
+   axios.post("http://localhost/user.php", this.formData).then(
+    (response)=> {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+    
+  }
+
 }

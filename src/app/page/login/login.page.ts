@@ -12,7 +12,7 @@ import { AppState } from 'src/store/AppState';
 })
 export class LoginPage implements OnInit {
   email: string;    // Declarar a propriedade email
-  password: string; // Declarar a propriedade password
+  senha: string; // Declarar a propriedade password
 
   constructor(
     private navCtrl: NavController,
@@ -24,14 +24,14 @@ export class LoginPage implements OnInit {
 
     // Inicializar as propriedades
     this.email = '';    
-    this.password = ''; 
+    this.senha = ''; 
   }
 
   ngOnInit() {}
 
   // Método chamado ao enviar o formulário
   onSubmit() {
-    if (this.email && this.password) {
+    if (this.email && this.senha) {
       this.showHomePage(); // Navegar para a página inicial
     } else {
       // Aqui você pode adicionar um alerta ou mensagem de erro se necessário
