@@ -11,6 +11,7 @@ import { StoreModule, StoreRootModule } from '@ngrx/store';
 import { StoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LoadingComponent } from './components/loading/loading.component';
 
+
 @NgModule({
   declarations: [AppComponent,
     LoadingComponent

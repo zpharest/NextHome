@@ -1,0 +1,21 @@
+
+
+<ion-content [fullscreen]="true">
+  <ion-card class="flex-center" >
+    
+    <ion-card-content >
+      <ion-card-title color="primary">Bem-Vindo.</ion-card-title>
+      <ion-card-subtitle color="secondary">Selecione uma forma de entrar</ion-card-subtitle>
+      <br><br>
+    <ion-button 
+      type="submit" 
+      color="secondary" 
+      shape="round"
+      (click)="login()"
+      >Login
+    </ion-button>
+    <ion-button (click)="register()" color="secondary"  fill="clear">Registrar</ion-button>
+    
+    </ion-card-content>
+  </ion-card>
+</ion-content>
