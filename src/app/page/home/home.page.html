@@ -9,6 +9,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-list color="secondary">
+
     <ion-item color="secondary">
       <ion-avatar slot="start">
         <img src="assets/imagem/profile.png" />
@@ -18,6 +19,7 @@
         <p>Doações Realizadas: {{ donations.length }}</p>
       </ion-label>
     </ion-item>
+
   </ion-list>
   
 
@@ -26,8 +28,10 @@
       <ion-card-title>{{ donation.anuncio }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
+
       <img [src]="donation.imagem ? donation.imagem : 'assets/imagem/imgadd.png'" width="100%" />
       <p>{{ donation.detalhes }}</p>
+      
     </ion-card-content>
     <ion-buttons>
       <ion-button color="tertiary" (click)="editDonation(donation)">
