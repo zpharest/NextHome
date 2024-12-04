@@ -1,18 +1,61 @@
-ion-card {
-    height: 200px; /* Altura fixa para manter consistência */
-    --box-shadow: none;  // Remove a sombra do card (opcional)
-  --border-radius: 0;  // Remove o arredondamento das bordas (opcional)
-  border: none;        
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+/* Estilo para o grid de imagens */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 itens por linha */
+  gap: 16px;
+  padding: 16px;
+}
 
-  img{
-    height: 150%;
-    width: 150%;
-  }
+.photo-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
 
-P{
-  color: black;
+.photo-item:hover {
+  transform: scale(1.05);
+}
+
+/* Estilo para as imagens de doações */
+.donation-image {
+  width: 100%;
+  height: 200px; /* Tamanho fixo para as imagens */
+  object-fit: cover; /* Para manter a proporção das imagens */
+  display: block;
+  border-radius: 8px;
+}
+
+/* Descrição sobre a imagem com estilo mais moderno e elegante */
+.donation-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4); /* Fundo semitransparente */
+  color: white;
+  padding: 16px;
+  font-size: 16px; /* Aumentando o tamanho da fonte para mais destaque */
+  font-weight: 600; /* Tornando a fonte mais ousada */
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  text-transform: uppercase; /* Adicionando estilo mais moderno */
+  letter-spacing: 1px; /* Melhorando o espaçamento entre as letras */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra suave para destaque */
+  backdrop-filter: blur(10px); /* Efeito de desfoque suave no fundo */
+  -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+}
+
+/* Efeito de hover mais suave no item */
+.photo-item:hover .donation-info {
+  background: rgba(0, 0, 0, 0.6); /* Escurece o fundo ao passar o mouse */
+  transform: translateY(-5px); /* Eleva um pouco o item */
+}
+
+/* Para a busca */
+ion-searchbar {
+  margin: 16px;
 }

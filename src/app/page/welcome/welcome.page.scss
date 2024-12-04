@@ -1,0 +1,22 @@
+ion-card {
+    position: relative;
+    text-align: center; /* Alinha o conteúdo ao centro */
+  }
+  
+  .img3 {
+    width: 100%; /* Ajuste o tamanho da imagem conforme necessário */
+    padding: 0%;
+    margin-bottom: -10%;
+    display: block; /* Garante que a imagem seja tratada como bloco, ajudando no alinhamento */
+    z-index: 1; /* Coloca a imagem abaixo do conteúdo do card */
+  }
+  
+  ion-card-content {
+    position: relative;
+    margin-top: -70%;
+    z-index: 2; /* Garante que o conteúdo fique acima da imagem */
+  }
+  ion-card-subtitle{
+    margin-bottom: 5%;
+  }
+  

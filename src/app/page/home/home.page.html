@@ -23,13 +23,13 @@
   </ion-list>
   
 
-  <ion-card *ngFor="let donation of donations">
+  <ion-card class="post" *ngFor="let donation of donations"  > 
     <ion-card-header>
       <ion-card-title>{{ donation.anuncio }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
 
-      <img [src]="donation.imagem ? donation.imagem : 'assets/imagem/imgadd.png'" width="100%" />
+      <img id="imagem" width="auto" height="250px" [src]="donation.imagem ? donation.imagem : 'assets/imagem/imgadd.png'"  />
       <p>{{ donation.detalhes }}</p>
       
     </ion-card-content>
