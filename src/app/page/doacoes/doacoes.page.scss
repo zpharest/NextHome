@@ -1,0 +1,18 @@
+ion-card {
+    height: 200px; /* Altura fixa para manter consistência */
+    --box-shadow: none;  // Remove a sombra do card (opcional)
+  --border-radius: 0;  // Remove o arredondamento das bordas (opcional)
+  border: none;        
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  img{
+    height: 150%;
+    width: 150%;
+  }
+
+P{
+  color: black;
+}

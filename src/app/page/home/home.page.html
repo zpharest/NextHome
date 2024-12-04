@@ -1,38 +1,49 @@
-
+<ion-header [translucent]="true" >
+  <ion-toolbar color="secondary">
+    <ion-title>HOME</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list color="secondary">
-    
-      <ion-item color="secondary">
-          <ion-avatar slot="start">
-              <img src="">
-          </ion-avatar>
-          <ion-label>
-              <h1>Vinicius Pires</h1>
-              <p>Doações Realizadas: <span id="donations">00</span></p>
-              
-          </ion-label>
-          <ion-buttons slot="end">
-            <ion-menu-button auto-hide="false"></ion-menu-button>
-          </ion-buttons>
-      </ion-item>
+    <ion-item color="secondary">
+      <ion-avatar slot="start">
+        <img src="assets/imagem/profile.png" />
+      </ion-avatar>
+      <ion-label>
+        <h1>{{ user?.nome }} {{ user?.sobrenome }}</h1>
+        <p>Doações Realizadas: {{ donations.length }}</p>
+      </ion-label>
+    </ion-item>
   </ion-list>
+  
 
-  <ion-card>
+  <ion-card *ngFor="let donation of donations">
     <ion-card-header>
-      <ion-card-subtitle>Ultimas Doações: </ion-card-subtitle>
+      <ion-card-title>{{ donation.anuncio }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <ion-item lines="none">
-        <ion-icon name="hourglass-outline" slot="start" color="warning"></ion-icon>
-        <ion-label>Geladeira <p>12/07/2024 17:36</p></ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-label><p>Anunciado em 11/07/2024 </p><p>Nota: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p></ion-label>
-      </ion-item>
-      <ion-button (click)="showDonatesPage()" color="secondary" fill="clear" size="full">Ver todos...</ion-button>
+      <img [src]="donation.imagem ? donation.imagem : 'assets/imagem/imgadd.png'" width="100%" />
+      <p>{{ donation.detalhes }}</p>
     </ion-card-content>
+    <ion-buttons>
+      <ion-button color="tertiary" (click)="editDonation(donation)">
+        <ion-icon name="create" slot="start"></ion-icon> Editar
+      </ion-button>
+      <ion-button color="danger" (click)="deleteDonation(donation.id)">
+        <ion-icon name="trash" slot="start"></ion-icon> Excluir
+      </ion-button>
+    </ion-buttons>
   </ion-card>
+  
+  
+      
+
+     
+
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="showAddPage()">
       <ion-icon name="add"></ion-icon>

@@ -1,15 +1,22 @@
 <ion-content [fullscreen]="true" color="secondary">
   <div class="flex-center">
-    
-
     <ion-card>
       <ion-card-header>
         <ion-card-title class="flex-center" color="secondary">Login</ion-card-title>
       </ion-card-header>
 
       <ion-card-content>
+        <div *ngIf="errorMessage" 
+             style="color: red; font-size: 14px; margin-bottom: 15px; text-align: center;">
+          {{ errorMessage }}
+        </div>
         
-        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div *ngIf="successMessage" 
+             style="color: green; font-size: 14px; margin-bottom: 15px; text-align: center;">
+          {{ successMessage }}
+        </div>
+        
+        <form  #loginForm="ngForm">
           <ion-item>
             <ion-input
               type="email"
@@ -17,7 +24,7 @@
               labelPlacement="floating"
               placeholder="email@gmail.com"
               required
-              [(ngModel)]="email"
+              [(ngModel)]="formData.email"
               name="email">
             </ion-input>
           </ion-item>
@@ -28,11 +35,11 @@
               labelPlacement="floating"
               placeholder="Senha"
               required
-              [(ngModel)]="senha"
+              [(ngModel)]="formData.senha"
               name="senha">
             </ion-input>
           </ion-item>
-          <ion-button size="full" color="dark" fill="clear" [disabled]="!loginForm.form.valid"
+          <ion-button size="full" color="dark" fill="clear" 
             (click)="forgotEmailPassword()"
           >Esqueci minha senha</ion-button>
           <ion-button 
@@ -41,7 +48,8 @@
             shape="round"
             size="full" 
             (click)="login()"
-            [disabled]="!loginForm.form.valid">
+            [disabled]="loginForm.invalid"
+        >   
             Entrar
           </ion-button>
           <ion-button (click)="register()" color="secondary" size="full" fill="clear">Registrar</ion-button>

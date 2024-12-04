@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title>Doações</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="filterDonations()"></ion-searchbar>
+  <div class="grid-container">
+    <ion-card *ngFor="let donation of filteredDonations" (click)="openDonationDetails(donation)">
+      
+     
+        <p id="anuncio">{{ donation.anuncio }}</p>
+       <img (click)="openDonationDetails(donation)" [src]="donation.imagem" *ngIf="donation.imagem" width="50%" height="50%"/>
+
+   
+    </ion-card>
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="showAddPage()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

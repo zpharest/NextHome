@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { MenuController, NavController } from '@ionic/angular';
-import axios from 'axios';
+import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
+import { hide, show } from 'src/store/loading/loading.actions';
+import { AppState } from 'src/store/AppState';
+import axios from 'axios'; 
 
 @Component({
   selector: 'app-register',
@@ -21,6 +24,8 @@ export class RegisterPage implements OnInit {
     senha: "", 
   }
 
+  errorMessage: string = ''; // Mensagem de erro para exibir ao usuário
+  successMessage: string = '';// Mensagem de sucesso para exibir ao usuário
 
   constructor( 
     private navCtrl: NavController,
@@ -38,15 +43,6 @@ export class RegisterPage implements OnInit {
 
   ngOnInit() {}
 
-   // Método chamado ao enviar o formulário
-   onSubmit() {
-    if (this.email && this.senha) {
-      this.showHomePage(); // Navegar para a página inicial
-    } else {
-      // Aqui você pode adicionar um alerta ou mensagem de erro se necessário
-      console.error("Email e senha são obrigatórios!");
-    }
-  }
 
 
   showLoginPage() {
@@ -71,15 +67,36 @@ export class RegisterPage implements OnInit {
   }
 
   create(){
+    this.errorMessage = '';
+    this.successMessage = '';
     console.log(this.formData);
    axios.post("http://localhost/user.php", this.formData).then(
     (response)=> {
       console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-    
+   
+        // Remove o texto extra e parseia o JSON
+        const responseDataString = response.data.replace('connected successfully', '');
+        let responseData;
+        try {
+          responseData = JSON.parse(responseDataString);
+        } catch (e) {
+          console.error('Erro ao parsear o JSON:', e);
+          this.errorMessage = 'Resposta inválida do servidor.';
+          return;
+        }
+
+        // Verifique se a resposta contém o status de sucesso
+        if (responseData && responseData.status === 'success') {
+          this.successMessage = 'registro realizado com sucesso!';
+        } else {
+          // registro falhou - Exibe a mensagem de erro retornada pela API
+          this.errorMessage = responseData.message || 'algum erro ocorreu, tente novamente.';
+        }
+      }
+    ).catch((error) => {
+      console.error('Erro ao se comunicar com a API:', error);
+      this.errorMessage = 'Ocorreu um erro ao tentar fazer login. Verifique sua conexão.';
+    });
   }
 
 }

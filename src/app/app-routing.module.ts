@@ -42,7 +42,30 @@ const routes: Routes = [
   {
     path: 'welcome',
     loadChildren: () => import('./page/welcome/welcome.module').then( m => m.WelcomePageModule)
-  }
+  },
+  {
+    path: 'doacoes',
+    loadChildren: () => import('./page/doacoes/doacoes.module').then( m => m.DoacoesPageModule)
+  },
+  {
+    path: 'donation-details',
+    loadChildren: () => import('./page/donation-details/donation-details.module').then( m => m.DonationDetailsPageModule)
+  },
+
+  {
+    path: 'delete-donation',
+    loadChildren: () => import('./page/delete-donation/delete-donation.module').then( m => m.DeleteDonationPageModule)
+  },  {
+    path: 'edit-donation',
+    loadChildren: () => import('./page/edit-donation/edit-donation.module').then( m => m.EditDonationPageModule)
+  },
+
+
+  
+   
+
+
+
 
 ];
 

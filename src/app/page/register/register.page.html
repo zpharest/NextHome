@@ -8,7 +8,17 @@
 
       <ion-card-content>
 
-        <form #loginForm="ngForm" (ngSubmit)="showLoginPage()" novalidate>
+          <div *ngIf="errorMessage" 
+               style="color: red; font-size: 14px; margin-bottom: 15px; text-align: center;">
+            {{ errorMessage }}
+          </div>
+          
+          <div *ngIf="successMessage" 
+               style="color: green; font-size: 14px; margin-bottom: 15px; text-align: center;">
+            {{ successMessage }}
+          </div>
+
+        <form #loginForm="ngForm" novalidate>
           <ion-item>
             <ion-input
               label="Nome"

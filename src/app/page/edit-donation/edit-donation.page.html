@@ -3,12 +3,13 @@
     <ion-buttons slot="start">
       <ion-back-button text=""></ion-back-button>
     </ion-buttons>
-    <ion-title>Criar Doação</ion-title>
+    <ion-title>Editar Doação</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content color="light">
   <ion-list [inset]="true">
+    <!-- Exibe a imagem atual e permite alterar -->
     <ion-button (click)="takePicture()" id="publish-button" expand="block">
       <img [src]="imageSource" width="50%" />
     </ion-button>
@@ -28,8 +29,8 @@
     </ion-item>
   </ion-list>
   <ion-button 
-    (click)="postDonation()" 
+    (click)="updateDonation()" 
     id="publish-button" 
     expand="block" 
-    shape="round">Publicar</ion-button>
+    shape="round">Atualizar</ion-button>
 </ion-content>

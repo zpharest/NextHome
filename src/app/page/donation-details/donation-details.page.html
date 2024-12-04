@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes da doação</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card id="details">
+    <ion-card-header>
+      <ion-card-title>{{ donation.anuncio }}</ion-card-title>
+      <p>Postado por: {{ donation.nome }} {{ donation.sobrenome }}</p>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="donation.imagem" *ngIf="donation.imagem" width="100%" />
+      <p>{{ donation.detalhes }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

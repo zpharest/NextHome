@@ -1,27 +1,28 @@
-import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { MenuController, NavController } from '@ionic/angular';
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
-
-  
 })
 export class AppComponent {
-
   profile = {
-    name: 'Vinicius Pires',
-    email: 'viniciuspires@gmail.com',
+    name: '',
+    email: '',
   };
 
-  public appPages = [];
-  constructor(
+  constructor(private navCtrl: NavController, public menuCtrl: MenuController) {
+    this.loadUserProfile();
+  }
 
-    private navCtrl: NavController,
-    public menuCtrl: MenuController
-  ) {}
-
-
- 
+  // Carregar informações do usuário
+  loadUserProfile() {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      const user = JSON.parse(userData);
+      this.profile.name = `${user.nome} ${user.sobrenome}`;
+      this.profile.email = user.email; // Certifique-se de incluir o email ao salvar o usuário no login
+    }
+  }
 }

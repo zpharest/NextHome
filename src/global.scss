@@ -46,3 +46,13 @@
 
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  grid-gap: 16px; /* Espaçamento entre os cards */
+  padding: 16px;
+}
+
+
+
+
